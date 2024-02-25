@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a onClick="allMovies()" class="nav-link active" id="homeTab" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="myReviewsTab" data-toggle="tab" href="#myReviews">My Reviews</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="allReviewsTab" data-toggle="tab" href="#allReviews">All Reviews</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+            <h2>Welcome to Movie Reviews App</h2>
+            <p>This is the home page of the app.</p>
+            
+            <ul id="movieList" class="list-group">
+
+			</ul>
+            
+            
+        </div>
+        <div class="tab-pane fade" id="myReviews">
+            <h2>My Reviews</h2>
+            <div id="myReviewsContent"></div>
+        </div>
+        <div class="tab-pane fade" id="allReviews">
+            <h2>All Reviews</h2>
+            <div id="allReviewsContent"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Review Modal -->
+<div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addReviewModalLabel">Add Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitReview()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="./logic.js"></script>
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
